@@ -25,11 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 SECRET_KEY = "MOCK"
 
-AMQP_HOST = os.environ.get('CELERY_BROKER_HOST', "") #ADD THERE !!!
-CELERY_RESULT_BACKEND = os.environ.get('CELERY_RESULT_BACKEND', None)
+AMQP_HOST = os.environ.get('CELERY_BROKER_HOST', 'RABBITMQ_SERVICE_HOST')
+CELERY_RESULT_BACKEND = os.environ.get('CELERY_RESULT_BACKEND', "rpc://")
 
 FRONTEND_HOST = os.environ.get('FRONTEND_HOST', 'FRONTEND_SERVICE_SERVICE_HOST')
 BACKEND_HOST = os.environ.get('BACKEND_HOST', 'BACKEND_SERVICE_SERVICE_HOST')
