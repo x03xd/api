@@ -8,7 +8,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "amazon.settings")
 
 app = Celery('amazon')
 app.config_from_object('django.conf:settings', namespace='CELERY')
-app.conf.broker_url = f"amqp://guest@{settings.AMQP_HOST}:5672//"
+app.conf.broker_url = f"amqp://guest@{settings.AMQP_HOST}//"
 app.conf.result_backend = settings.CELERY_RESULT_BACKEND
 app.conf.result_persistent = False
 
